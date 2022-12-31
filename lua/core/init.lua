@@ -1,0 +1,8 @@
+require("core.set")
+require("core.keymap")
+require("core.plugins")
+require("core.autogroup")
+require("core.keymap")
+require("core.colorscheme")
+require("core.treesitter")
+require("core.lsp_zero")
