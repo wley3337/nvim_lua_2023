@@ -9,10 +9,15 @@ local nkeymap = function(key, map, opt)
   vim.keymap.set("n", key, map, opt)
 end
 
-nkeymap("<leader>fe", vim.cmd.Ex) -- built in file explorer
+nkeymap("<leader>fe", "<cmd>NvimTreeToggle<CR>") -- built in file explorer
 
 ikeymap("jk", "<ESC>") -- remap for quick escap
 ikeymap("kj", "<ESC>") -- remap for quick escap
+-- Better window navigation
+nkeymap("<C-h>", "<C-w>h")
+nkeymap("<C-j>", "<C-w>j")
+nkeymap("<C-k>", "<C-w>k")
+nkeymap("<C-l>", "<C-w>l")
 
 --#region primeagen re-map
 
@@ -42,7 +47,9 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]]) -- delete to void register
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>f", function()
+  vim.lsp.buf.format()
+end)
 
 --#region this is navigating the quick fix list
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
@@ -57,3 +64,6 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- it makes the current file into an exicutable
 -- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 --#endregion
+--
+-- GitSigns --
+nkeymap("<leader>gb", ":GitBlameToggle<cr>")
