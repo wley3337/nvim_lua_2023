@@ -1,8 +1,8 @@
 -- Use a protected call so we do not error out on first use
 local status_ok, treesitter = pcall(require, "nvim-treesitter")
 if not status_ok then
-	print("Nvim-Treesitter could not be found or installed")
-	return
+  print("Nvim-Treesitter could not be found or installed")
+  return
 end
 
 -- [[ Configure Treesitter ]]
@@ -11,6 +11,8 @@ require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = { 'c', 'cpp', 'go', 'json', 'lua', 'python', 'rust', 'typescript', 'yaml', 'help', 'vim' },
 
+  autotag = { enable = true },
+  auto_install = true,
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
   incremental_selection = {

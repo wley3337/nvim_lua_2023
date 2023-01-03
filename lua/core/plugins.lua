@@ -100,6 +100,7 @@ packer.startup(function(use)
 	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 	use("f-person/git-blame.nvim") -- git blame plugin also lets you link out to PR
 	use('windwp/nvim-autopairs') -- auto pair brackets
+	use('windwp/nvim-ts-autotag') -- auto closing tag for JSX and HTML
 	-- nvim tree for file explorer
 	use {
 		'nvim-tree/nvim-tree.lua',
