@@ -133,6 +133,10 @@ packer.startup(function(use)
 			{ 'rafamadriz/friendly-snippets' },
 		}
 	}
+	use('simrat39/rust-tools.nvim') -- added language service for rust
+
+
+
 	-- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
 	local has_plugins, plugins = pcall(require, 'custom.plugins')
 	if has_plugins then

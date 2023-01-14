@@ -9,7 +9,7 @@ end
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'json', 'lua', 'python', 'rust', 'typescript', 'yaml', 'help', 'vim' },
+  ensure_installed = { 'c', 'cpp', 'go', 'help', 'json', 'lua', 'python', 'rust', 'toml', 'typescript', 'vim', 'yaml', },
 
   autotag = { enable = true },
   auto_install = true,
@@ -23,6 +23,11 @@ require('nvim-treesitter.configs').setup {
       scope_incremental = '<c-s>',
       node_decremental = '<c-backspace>',
     },
+  },
+  rainbow = {
+    enable = true,
+    extended_mode = true,
+    max_file_lines = nil,
   },
   textobjects = {
     select = {
@@ -69,3 +74,14 @@ require('nvim-treesitter.configs').setup {
     },
   },
 }
+
+-- fold settings
+-- vim.o.foldmethod = "indent"
+vim.o.foldmethod = "indent"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.o.foldtext = [[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend)) ]]
+vim.o.foldtext = [[substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g') . " ..."]]
+vim.o.fillchars = "fold: "
+vim.o.foldnestmax = 3
+vim.o.foldminlines = 1
+vim.o.foldlevel = 2

@@ -47,6 +47,7 @@ vim.api.nvim_create_autocmd({ 'BufWinEnter', 'FileType' }, {
   group    = vim.api.nvim_create_augroup('nvim-lastplace', {}),
   callback = run
 })
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
@@ -77,6 +78,16 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   group = auto_format_lsp,
   pattern = '*',
 })
+
+-- auto fold
+-- local fold_handling = vim.api.nvim_create_augroup('FoldHandling', { clear = true })
+-- vim.api.nvim_create_autocmd('BufReadPost,FileReadPost', {
+--   callback = function()
+--     vim.api.nvim_command("normal zR")
+--   end,
+--   group = fold_handling,
+--   pattern = '*',
+-- })
 
 --#region Closes nvim_tree if it's the last buffer
 -- Source: https://github.com/nvim-tree/nvim-tree.lua/wiki/Auto-Close

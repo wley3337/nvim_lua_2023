@@ -12,7 +12,7 @@ end
 nkeymap("<leader>fe", "<cmd>NvimTreeToggle<CR>") -- built in file explorer
 
 ikeymap("jk", "<ESC>") -- remap for quick escap
-ikeymap("kj", "<ESC>") -- remap for quick escap
+-- ikeymap("kj", "<ESC>") -- remap for quick escap
 -- Better window navigation
 nkeymap("<C-h>", "<C-w>h")
 nkeymap("<C-j>", "<C-w>j")
