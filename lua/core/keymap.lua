@@ -25,6 +25,10 @@ nkeymap("<C-l>", "<C-w>l")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- move through wrapped lines
+vim.keymap.set("n", "j", "gj")
+vim.keymap.set("n", "k", "gk")
+
 vim.keymap.set("n", "J", "mzJ`z") -- keeps the curser at the start of the line when using 'J' to bring next line up with space
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz") -- keeps curser in the middle when moving the screen

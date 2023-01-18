@@ -80,7 +80,7 @@ require('nvim-treesitter.configs').setup {
 vim.o.foldmethod = "indent"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 -- vim.o.foldtext = [[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend)) ]]
-vim.o.foldtext = [[substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g') . " ..."]]
+vim.o.foldtext = [[substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g') . " "    . (v:foldend-v:foldstart + 1) . "..."]]
 vim.o.fillchars = "fold: "
 vim.o.foldnestmax = 3
 vim.o.foldminlines = 1
