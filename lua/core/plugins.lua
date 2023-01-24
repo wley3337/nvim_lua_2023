@@ -86,7 +86,10 @@ packer.startup(function(use)
 	use 'lewis6991/gitsigns.nvim'
 	-- Git related plugins end
 
+	use 'tjdevries/colorbuddy.vim' -- color assist
+	use 'RishabhRD/nvim-rdark' -- Theme
 	use 'navarasu/onedark.nvim' -- Theme inspired by Atom
+	use 'marko-cerovac/material.nvim' -- Theme inspired by Atom
 	use 'haishanh/night-owl.vim' -- Theme inspired by Atom
 	use 'nvim-lualine/lualine.nvim' -- Fancier statusline
 	use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
