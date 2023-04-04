@@ -45,7 +45,6 @@ end
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(client, bufnr)
-
     if client.name == "eslint" then
         vim.cmd.LspStop('eslint')
         return
@@ -63,7 +62,9 @@ local on_attach = function(client, bufnr)
 
         vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
     end
+
     local builtin = require('telescope.builtin')
+
     nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
     nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
@@ -112,7 +113,11 @@ local servers = {
     -- clangd = {},
     -- gopls = {},
     -- pyright = {},
-    -- rust_analyzer = {},
+    rust_analyzer = {
+        cmd = {
+            "rustup", "run", "stable", "rust-analyzer"
+        }
+    },
     -- tsserver = {},
 
     sumneko_lua = {
@@ -154,6 +159,8 @@ mason_lspconfig.setup_handlers {
             capabilities = capabilities,
             on_attach = on_attach,
             settings = servers[server_name],
+
+            cmd = (server_name == 'rust_analyzer') and { "rustup", "run", "stable", "rust-analyzer" } or {}
         }
     end,
 }
