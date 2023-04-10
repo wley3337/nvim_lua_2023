@@ -11,7 +11,7 @@ end
 
 nkeymap("<leader>fe", "<cmd>NvimTreeToggle<CR>") -- built in file explorer
 
-ikeymap("jk", "<ESC>") -- remap for quick escap
+ikeymap("jk", "<ESC>")                           -- remap for quick escap
 -- ikeymap("kj", "<ESC>") -- remap for quick escap
 -- Better window navigation
 nkeymap("<C-h>", "<C-w>h")
@@ -29,13 +29,13 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "k", "gk")
 
-vim.keymap.set("n", "J", "mzJ`z") -- keeps the curser at the start of the line when using 'J' to bring next line up with space
+vim.keymap.set("n", "J", "mzJ`z")       -- keeps the curser at the start of the line when using 'J' to bring next line up with space
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz") -- keeps curser in the middle when moving the screen
 vim.keymap.set("n", "<C-u>", "<C-u>zz") -- keeps curser in the middle when moving the screen
 
-vim.keymap.set("n", "n", "nzzzv") -- keeps curser in the middle when searching the screen
-vim.keymap.set("n", "N", "Nzzzv") -- keeps curser in the middle when searching the screen
+vim.keymap.set("n", "n", "nzzzv")       -- keeps curser in the middle when searching the screen
+vim.keymap.set("n", "N", "Nzzzv")       -- keeps curser in the middle when searching the screen
 
 
 -- greatest remap ever
@@ -43,7 +43,7 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever @asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]]) -- yanks into system clipboard
-vim.keymap.set("n", "<leader>Y", [["+Y]]) -- yanks into system clipboard
+vim.keymap.set("n", "<leader>Y", [["+Y]])          -- yanks into system clipboard
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]]) -- delete to void register
 
