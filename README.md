@@ -13,8 +13,10 @@ Seperate core functionality and specific additions/modifications. Essentially to
 - `brew install ripgrep`
 -  [install nerd fonts](https://gist.github.com/davidteren/898f2dcccd42d9f8680ec69a3a5d350e)
 
-
+## Clean install
+Delete `rm -rf ~/.local/share/nvim`
+Delete `rm -rf ~/.config/nvim`
 
 ## Patterns
-
-All files are exported moduels with `init` functions.
+some files are exported modules with `init` functions and some are not.
+Not sure if the inconsistancy prevents extra lines of code VS a mix of patterns.

@@ -1,13 +1,13 @@
 local plugins = {
     -- theme
     {
-	 -- 'RishabhRD/nvim-rdark' -- Theme
-	 -- 'navarasu/onedark.nvim' -- Theme inspired by Atom
-	 -- 'marko-cerovac/material.nvim' -- Theme inspired by Atom
-	 -- 'haishanh/night-owl.vim' -- Theme inspired by Atom
+        -- 'RishabhRD/nvim-rdark' -- Theme
+        -- 'navarasu/onedark.nvim' -- Theme inspired by Atom
+        -- 'marko-cerovac/material.nvim' -- Theme inspired by Atom
+        -- 'haishanh/night-owl.vim' -- Theme inspired by Atom
         "tjdevries/colorbuddy.vim",
         config = function()
-          require('colorbuddy').colorscheme('night-owl')
+            require('colorbuddy').colorscheme('night-owl')
         end,
         dependencies = {
             {
@@ -22,6 +22,9 @@ local plugins = {
             {
                 "marko-cerovac/material.nvim",
             },
+            {
+                "Aryansh-S/fastdark.vim"
+            }
         },
         lazy = false,
         name = "Color Buddy: Night Owl",
@@ -34,7 +37,7 @@ local plugins = {
     {
         "nvim-treesitter/nvim-treesitter",
         config = function()
-            require("core.treesitter").init()
+            require("core.treesitter")
         end,
     },
     {
@@ -43,16 +46,16 @@ local plugins = {
     {
         "nvim-treesitter/nvim-treesitter-context",
     },
-    {
-        "nvim-treesitter/playground",
-    },
+    -- {
+    --     "nvim-treesitter/playground",
+    -- },
     -- nvim-biscuits
-    {
-        "code-biscuits/nvim-biscuits",
-        config = function()
-            require("core.biscuits").init()
-        end,
-    },
+    -- {
+    --     "code-biscuits/nvim-biscuits",
+    --     config = function()
+    --         require("core.biscuits").init()
+    --     end,
+    -- },
     -- A collection of language packs for Vim.
     {
         "sheerun/vim-polyglot",
@@ -74,7 +77,7 @@ local plugins = {
     {
         "nvim-lualine/lualine.nvim",
         config = function()
-            require("core.lualine").init()
+            require("core.lualine")
         end,
         dependencies = {
             {
@@ -99,10 +102,10 @@ local plugins = {
                 "hrsh7th/cmp-nvim-lsp",
             },
             {
-                "j-hui/fidget.nvim",
+                "j-hui/fidget.nvim", -- virtual text in bottom right as loading
             },
             {
-                "b0o/schemastore.nvim",
+                "b0o/schemastore.nvim", -- json schemas
             },
         },
     },
@@ -117,18 +120,18 @@ local plugins = {
             require("core.null-ls").init()
         end,
     },
-    {
-        "glepnir/lspsaga.nvim",
-        config = function()
-            require("core.lspsaga").init()
-        end,
-        dependencies = {
-            {
-                "neovim/nvim-lspconfig",
-            },
-        },
-        event = "BufRead",
-    },
+    -- {
+    --     "glepnir/lspsaga.nvim",
+    --     config = function()
+    --         require("core.lspsaga").init()
+    --     end,
+    --     dependencies = {
+    --         {
+    --             "neovim/nvim-lspconfig",
+    --         },
+    --     },
+    --     event = "BufRead",
+    -- },
     -- completion
     {
         "hrsh7th/nvim-cmp",
@@ -157,7 +160,7 @@ local plugins = {
     {
         "nvim-tree/nvim-tree.lua",
         config = function()
-            require("core.nvim-tree").init()
+            require("core.nvim-tree")
         end,
     },
     -- harpoon
@@ -173,7 +176,7 @@ local plugins = {
     {
         "nvim-telescope/telescope.nvim",
         config = function()
-            require("core.telescope").init()
+            require("core.telescope")
         end,
         dependencies = {
             {
@@ -189,17 +192,17 @@ local plugins = {
         },
     },
     -- trouble
-    {
-        "folke/trouble.nvim",
-        config = function()
-            require("core.trouble").init()
-        end,
-        dependencies = {
-            {
-                "nvim-tree/nvim-web-devicons",
-            },
-        },
-    },
+    -- {
+    --     "folke/trouble.nvim",
+    --     config = function()
+    --         require("core.trouble").init()
+    --     end,
+    --     dependencies = {
+    --         {
+    --             "nvim-tree/nvim-web-devicons",
+    --         },
+    --     },
+    -- },
     -- editorconfig
     {
         "editorconfig/editorconfig-vim",
@@ -212,51 +215,51 @@ local plugins = {
     {
         "numToStr/Comment.nvim",
         config = function()
-            require("core.comment").init()
+            require("core.comment")
         end,
     },
     -- autopairs
     {
         "windwp/nvim-autopairs",
         config = function()
-            require("core.autopairs").init()
+            require("core.autopairs")
         end,
     },
     -- terminal
-    {
-        "akinsho/toggleterm.nvim",
-        config = function()
-            require("core.toggleterm").init()
-        end,
-    },
+    -- {
+    --     "akinsho/toggleterm.nvim",
+    --     config = function()
+    --         require("core.toggleterm").init()
+    --     end,
+    -- },
     -- run tests
-    {
-        "vim-test/vim-test",
-        config = function()
-            require("core.tests").init()
-        end,
-    },
+    -- { "vim-test/vim-test",
+    --     config = function()
+    --         require("core.tests").init()
+    --     end,
+    -- },
     -- show colors visually
-    {
-        "norcalli/nvim-colorizer.lua",
-        config = function()
-            require("core.colorizer").init()
-        end,
-    },
+    -- {
+    --     "norcalli/nvim-colorizer.lua",
+    --     config = function()
+    --         require("core.colorizer").init()
+    --     end,
+    -- },
     -- git
     {
         "lewis6991/gitsigns.nvim",
         config = function()
-            require("core.gitsigns").init()
+            require("core.git_signs")
         end,
     },
     {
         "tpope/vim-fugitive",
     },
     {
-        "APZelos/blamer.nvim",
+        -- "APZelos/blamer.nvim",
+        "f-person/git-blame.nvim", -- use different git blame
         config = function()
-            require("core.blamer").init()
+            require("core.git_blame")
         end,
     },
 }

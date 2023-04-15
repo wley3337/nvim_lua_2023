@@ -1,5 +1,5 @@
 -- Use a protected call so we do not error out on first use
-local status_ok, treesitter = pcall(require, "nvim-treesitter")
+local status_ok, _ = pcall(require, "nvim-treesitter")
 if not status_ok then
   print("Nvim-Treesitter could not be found or installed")
   return
@@ -8,13 +8,34 @@ end
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
-  -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'help', 'json', 'lua', 'python', 'rust', 'toml', 'typescript', 'vim', 'yaml', },
-
   autotag = { enable = true },
   auto_install = true,
+
+  -- Add languages to be installed here that you want installed for treesitter
+  ensure_installed = {
+    'c',
+    'cpp',
+    'css',
+    'go',
+    --'help', -- parser not available
+    'html',
+    'javascript',
+    'json',
+    'lua',
+    "markdown",
+    "markdown_inline",
+    'python',
+    'rust',
+    'toml',
+    'tsx',
+    'typescript',
+    'vim',
+    'yaml',
+  },
+
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
+
   incremental_selection = {
     enable = true,
     keymaps = {
@@ -29,6 +50,7 @@ require('nvim-treesitter.configs').setup {
     extended_mode = true,
     max_file_lines = nil,
   },
+
   textobjects = {
     select = {
       enable = true,
@@ -80,7 +102,8 @@ require('nvim-treesitter.configs').setup {
 vim.o.foldmethod = "indent"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 -- vim.o.foldtext = [[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend)) ]]
-vim.o.foldtext = [[substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g') . " "    . (v:foldend-v:foldstart + 1) . "..."]]
+vim.o.foldtext =
+[[substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g') . " "    . (v:foldend-v:foldstart + 1) . "..."]]
 vim.o.fillchars = "fold: "
 vim.o.foldnestmax = 3
 vim.o.foldminlines = 1
