@@ -8,9 +8,9 @@ require("core.keymap")
 
 require("core.autogroup")
 
-require("core.colorscheme")
+-- require("core.colorscheme")
 require("core.nvim_ts_autotag")
-require("core.treesitter")
+-- require("core.treesitter")
 -- require("core.lsp_zero")
 -- require("core.git_signs")
 -- require("core.git_blame")
