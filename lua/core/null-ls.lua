@@ -3,17 +3,17 @@ local M = {}
 function M.init()
     local status_ok, null_ls = pcall(require, "null-ls")
     if not status_ok then
-		print("Null LS failed to load")
+        print("Null LS failed to load")
         return
     end
     local null_ls_utils_status_ok, null_ls_utils = pcall(require, "null-ls.utils")
     if not null_ls_utils_status_ok then
-		print("Null LS Utils failed to load")
+        print("Null LS Utils failed to load")
         return
     end
     local mason_null_ls_status_ok, mason_null_ls = pcall(require, "mason-null-ls")
     if not mason_null_ls_status_ok then
-		print("Mason Null LS failed to load")
+        print("Mason Null LS failed to load")
         return
     end
 
@@ -89,7 +89,7 @@ function M.init()
             return is_prettier_project_result
         end
 
-        if utils.root_has_file({ ".prettierrc" }) then
+        if utils.root_has_file({ ".prettierrc", ".prettierrc.json" }) then
             is_prettier_project_result = true
             return is_prettier_project_result
         end
