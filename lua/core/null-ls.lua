@@ -40,7 +40,11 @@ function M.init()
             return is_eslint_project_result
         end
 
-        local has_eslintrc_js = utils.root_has_file({ ".eslintrc.js", ".eslintrc.json" })
+        local has_eslintrc_js = utils.root_has_file({
+            ".eslintrc.js",
+            ".eslintrc.json",
+            "eslintrc.cjs",
+        })
         if has_eslintrc_js then
             is_eslint_project_result = true
             return true
@@ -89,7 +93,11 @@ function M.init()
             return is_prettier_project_result
         end
 
-        if utils.root_has_file({ ".prettierrc", ".prettierrc.json" }) then
+        if utils.root_has_file({
+                ".prettierrc",
+                ".prettierrc.json",
+                ".prettierrc.cjs",
+            }) then
             is_prettier_project_result = true
             return is_prettier_project_result
         end

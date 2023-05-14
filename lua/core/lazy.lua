@@ -136,18 +136,18 @@ local plugins = {
 			require("core.null-ls").init()
 		end,
 	},
-	-- {
-	--     "glepnir/lspsaga.nvim",
-	--     config = function()
-	--         require("core.lspsaga").init()
-	--     end,
-	--     dependencies = {
-	--         {
-	--             "neovim/nvim-lspconfig",
-	--         },
-	--     },
-	--     event = "BufRead",
-	-- },
+	{
+		"glepnir/lspsaga.nvim",
+		config = function()
+			require("core.lspsaga").init()
+		end,
+		dependencies = {
+			{
+				"neovim/nvim-lspconfig",
+			},
+		},
+		event = "BufRead",
+	},
 	-- completion
 	{
 		"hrsh7th/nvim-cmp",

@@ -64,11 +64,18 @@ local server_configs = {
 		end
 
 		return {
-			filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+			filetypes = {
+				"javascript",
+				"javascriptreact",
+				"javascript.jsx",
+				"typescript",
+				"typescriptreact",
+				"typescript.tsx",
+			},
 			init_options = {
 				maxTsServerMemory = 12288,
 				preferences = {
-					importModuleSpecifierPreference = "relative",
+					importModuleSpecifierPreference = "non-relative", -- relative, -- non-relative
 				},
 			},
 			on_attach = M.make_on_attach({
