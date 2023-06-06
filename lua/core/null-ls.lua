@@ -153,11 +153,18 @@ function M.init()
                 timeout = -1,
             }),
             formatting.stylua,
+            diagnostics.mypy,
+            diagnostics.ruff,
+            formatting.black,
         },
     })
 
     mason_null_ls.setup({
-        ensure_installed = nil,
+        ensure_installed = {
+            "black",
+            "mypy",
+            "ruff",
+        },
         automatic_installation = true,
         automatic_setup = false,
     })
