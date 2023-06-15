@@ -14,7 +14,7 @@ function M.attach_keymaps_to_buffer(bufnr)
 	local utils = require("core.utils")
 
 	-- lsp provider to find the cursor word definition and reference
-	utils.buffer_keymap(bufnr, "n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
+	utils.buffer_keymap(bufnr, "n", "<leader>gr", "<cmd>Lspsaga lsp_finder<CR>")
 
 	-- code action
 	utils.buffer_keymap(bufnr, { "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
@@ -36,7 +36,7 @@ function M.attach_keymaps_to_buffer(bufnr)
 	-- utils.("n", "gs", ':lua require"lspsaga.signaturehelp".signature_help()<CR>')
 
 	-- rename
-	utils.buffer_keymap(bufnr, "n", "gr", "<cmd>Lspsaga rename<CR>")
+	-- utils.buffer_keymap(bufnr, "n", "gr", "<cmd>Lspsaga rename<CR>")
 
 	-- peek definition
 	utils.buffer_keymap(bufnr, "n", "gp", "<cmd>Lspsaga peek_definition<CR>")
