@@ -93,12 +93,6 @@ local plugins = { -- theme
     config = function()
         require("core.comment")
     end
-}, -- autopairs
-{
-    "windwp/nvim-autopairs",
-    config = function()
-        require("core.autopairs")
-    end
 }, -- terminal
 -- {
 --     "akinsho/toggleterm.nvim",

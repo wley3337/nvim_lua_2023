@@ -5,6 +5,7 @@
   "material.nvim": { "branch": "main", "commit": "60416124a07a3358f3b93915092db50fcb712b41" },
   "night-owl.vim": { "branch": "master", "commit": "783a41a27f7fe55ed91d1ec0f0351d06ae17fbc7" },
   "nightly.nvim": { "branch": "main", "commit": "825299e1dfafc093918137e752bde2dbaed60503" },
+  "nvim-autopairs": { "branch": "master", "commit": "9fd41181693dd4106b3e414a822bb6569924de81" },
   "nvim-rdark": { "branch": "master", "commit": "7c32ab475b992ebf63dc6997bae61717f885d118" },
   "nvim-treesitter": { "branch": "master", "commit": "503d0ccdee762bb4b2758c391288768fafe39861" },
   "onedark.nvim": { "branch": "master", "commit": "dc3bad0121298f89b50aaff8599d1946e07eb4c2" },
