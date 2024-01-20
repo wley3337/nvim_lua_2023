@@ -1,12 +1,7 @@
 local plugins = { -- theme
 -- enhanced vim.notify ui
 {"rcarriga/nvim-notify"}, -- treesitter
-{
-    "nvim-treesitter/nvim-treesitter",
-    config = function()
-        require("core.treesitter")
-    end
-}, {"nvim-treesitter/completion-treesitter"}, {"nvim-treesitter/nvim-treesitter-context"}, -- {
+-- {
 --     "nvim-treesitter/playground",
 -- },
 -- nvim-biscuits
@@ -55,11 +50,7 @@ local plugins = { -- theme
     dependencies = {{"hrsh7th/cmp-nvim-lsp"}, {"hrsh7th/cmp-buffer"}, {"onsails/lspkind-nvim"}, {"L3MON4D3/LuaSnip"},
                     {"saadparwaiz1/cmp_luasnip"}}
 }, -- file-tree sidebar explorer
--- harpoon
-{
-    "ThePrimeagen/harpoon",
-    dependencies = {{"nvim-lua/plenary.nvim"}}
-}, -- trouble
+-- trouble
 -- {
 --     "folke/trouble.nvim",
 --     config = function()
@@ -72,14 +63,7 @@ local plugins = { -- theme
 --     },
 -- },
 -- editorconfig
-{"editorconfig/editorconfig-vim"}, -- vim-smoothie for smooth scrolling
-{"psliwka/vim-smoothie"}, -- comments
-{
-    "numToStr/Comment.nvim",
-    config = function()
-        require("core.comment")
-    end
-}, -- terminal
+{"editorconfig/editorconfig-vim"}, -- terminal
 -- {
 --     "akinsho/toggleterm.nvim",
 --     config = function()
@@ -99,13 +83,7 @@ local plugins = { -- theme
 --         require("core.colorizer").init()
 --     end,
 -- },
--- git
-{
-    "lewis6991/gitsigns.nvim",
-    config = function()
-        require("core.git_signs")
-    end
-}, {"tpope/vim-fugitive"}, {"mfussenegger/nvim-dap"}, {
+{"mfussenegger/nvim-dap"}, {
     "rcarriga/nvim-dap-ui",
     dependencies = {"mfussenegger/nvim-dap"},
     config = function()
@@ -129,17 +107,6 @@ local plugins = { -- theme
     config = function(_, opts)
         local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
         require("dap-python").setup(path)
-    end
-}, {
-    -- "APZelos/blamer.nvim",
-    "f-person/git-blame.nvim", -- use different git blame
-    config = function()
-        require("core.git_blame")
-    end
-}, {
-    "windwp/nvim-ts-autotag",
-    config = function()
-        require("core.nvim_ts_autotag")
     end
 }}
 

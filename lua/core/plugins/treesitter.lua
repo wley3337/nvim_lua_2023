@@ -87,5 +87,6 @@ return {
             }
         }
     end,
+    dependencies = {"nvim-treesitter/completion-treesitter", "nvim-treesitter/nvim-treesitter-context"},
     lazy = false
 }
