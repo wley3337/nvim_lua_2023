@@ -16,16 +16,7 @@ local plugins = { -- theme
 --         require("core.biscuits").init()
 --     end,
 -- },
--- A collection of language packs for Vim.
-{"sheerun/vim-polyglot"}, -- buffer line (top of buffer)
-{
-    "akinsho/bufferline.nvim",
-    config = function()
-        require("core.bufferline").init()
-    end,
-    dependencies = {{"nvim-tree/nvim-web-devicons"}},
-    version = "^3"
-}, -- status line (bottom of buffer)
+-- status line (bottom of buffer)
 {
     "nvim-lualine/lualine.nvim",
     config = function()
@@ -64,12 +55,7 @@ local plugins = { -- theme
     dependencies = {{"hrsh7th/cmp-nvim-lsp"}, {"hrsh7th/cmp-buffer"}, {"onsails/lspkind-nvim"}, {"L3MON4D3/LuaSnip"},
                     {"saadparwaiz1/cmp_luasnip"}}
 }, -- file-tree sidebar explorer
-{
-    "nvim-tree/nvim-tree.lua",
-    config = function()
-        require("core.nvim-tree")
-    end
-}, -- harpoon
+-- harpoon
 {
     "ThePrimeagen/harpoon",
     dependencies = {{"nvim-lua/plenary.nvim"}}
