@@ -27,5 +27,5 @@ return {
 			},
 		})
 	end,
-	dependencies = { 'nvim-lua/plenary.nvim' }
+	dependencies = { 'nvim-lua/plenary.nvim', "williamboman/mason.nvim" }
 }
