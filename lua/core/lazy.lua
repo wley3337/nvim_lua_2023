@@ -11,24 +11,8 @@ local plugins = { -- theme
 --         require("core.biscuits").init()
 --     end,
 -- },
--- status line (bottom of buffer)
+-- lsp
 {
-    "nvim-lualine/lualine.nvim",
-    config = function()
-        require("core.lualine")
-    end,
-    dependencies = {{"nvim-tree/nvim-web-devicons"}}
-}, -- lsp
-{
-    "neovim/nvim-lspconfig",
-    config = function()
-        require("core.lsp").init()
-    end,
-    dependencies = {{"williamboman/mason.nvim"}, {"williamboman/mason-lspconfig.nvim"}, {"hrsh7th/cmp-nvim-lsp"},
-                    {"j-hui/fidget.nvim" -- virtual text in bottom right as loading
-    }, {"b0o/schemastore.nvim" -- json schemas
-    }}
-}, {
     "jose-elias-alvarez/null-ls.nvim",
     dependencies = {{"jay-babu/mason-null-ls.nvim"}},
     config = function()
@@ -41,14 +25,6 @@ local plugins = { -- theme
     end,
     dependencies = {{"neovim/nvim-lspconfig"}},
     event = "BufRead"
-}, -- completion
-{
-    "hrsh7th/nvim-cmp",
-    config = function()
-        require("core.completion").init()
-    end,
-    dependencies = {{"hrsh7th/cmp-nvim-lsp"}, {"hrsh7th/cmp-buffer"}, {"onsails/lspkind-nvim"}, {"L3MON4D3/LuaSnip"},
-                    {"saadparwaiz1/cmp_luasnip"}}
 }, -- file-tree sidebar explorer
 -- trouble
 -- {
