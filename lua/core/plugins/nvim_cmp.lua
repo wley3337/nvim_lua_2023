@@ -57,9 +57,19 @@ return {
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" }, -- lsp completions
 				{ name = "luasnip" }, -- For luasnip users.
-			}, {
 				{ name = "buffer" },
 			}),
+			sorting = {
+				comparators = {
+					cmp.config.compare.sort_text,
+					cmp.config.compare.score,
+					cmp.config.compare.order,
+					cmp.config.compare.offset,
+					cmp.config.compare.kind,
+					cmp.config.compare.length,
+					cmp.config.compare.exact,
+				},
+			},
 		})
 
 		-- Set configuration for specific filetype.
