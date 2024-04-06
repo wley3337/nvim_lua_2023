@@ -46,6 +46,12 @@ return {
                 print("mason lsp-config could not be found or installed")
                 return
             end
+            -- mason lsp config
+            local mason_tool_installer_status_ok, mason_tool_installer = pcall(require, "mason-tool-installer")
+            if not mason_tool_installer_status_ok then
+                print("mason tool-installer could not be found or installed")
+                return
+            end
             -- build servers to initialize
             local client_capabilities = vim.lsp.protocol.make_client_capabilities()
             local capabilities = vim.tbl_deep_extend(
@@ -65,10 +71,25 @@ return {
                 end
             end
 
+            local formatters_linters_ok, formatters_linters = pcall(require, "core.formatters_linters")
+            if not formatters_linters_ok then
+                print("File type formatters could not be found or installed")
+                return
+            end
+
             mason_lspconfig.setup({
                 automatic_installation = true,
                 ensure_installed = vim.tbl_keys(servers),
             })
+            local formatters_and_linters_to_install = formatters_linters.ensure_installed()
+            for k, v in pairs(formatters_and_linters_to_install) do
+                print(k)
+                print(v)
+            end
+            mason_tool_installer.setup({
+                ensure_installed = vim.tbl_keys(formatters_and_linters_to_install),
+            })
+
             mason_lspconfig.setup_handlers({
                 function(server_name)
                     lspconfig[server_name].setup(servers[server_name])
@@ -85,8 +106,9 @@ return {
         dependencies = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
+            "WhoIsSethDaniel/mason-tool-installer.nvim",
             "hrsh7th/cmp-nvim-lsp",
-            "j-hui/fidget.nvim", -- virtual text in bottom right as loading
+            "j-hui/fidget.nvim",    -- virtual text in bottom right as loading
             "b0o/schemastore.nvim", -- json schemas
         },
         lazy = false,

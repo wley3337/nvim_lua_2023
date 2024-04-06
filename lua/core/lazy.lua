@@ -103,4 +103,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
-require("lazy").setup("core.plugins")
+require("lazy").setup("core.plugins", {
+    checker = { enabled = true, notify = false },
+    change_detection = { notify = false },
+})
