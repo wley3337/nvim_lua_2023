@@ -14,7 +14,7 @@ return {
         end
 
         conform.setup({
-            formatters_by_ft = file_type_formatters.formatters,
+            formatters_by_ft = formatters_linters.formatters,
             format_on_save = {
                 lsp_fallback = true,
                 async = false,
