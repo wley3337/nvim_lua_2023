@@ -10,6 +10,7 @@ Seperate core functionality and specific additions/modifications. Essentially to
 - [The Primeagen](https://github.com/ThePrimeagen)
 - [Dane Harnett](https://github.com/dane-harnett)
 - [Josean Martinez](https://github.com/josean-dev/dev-environment-files/blob/main/.config/nvim/lua/josean/plugins/lsp/mason.lua)
+- [TypeCraft.dev](https://www.youtube.com/@typecraft_dev)
 
 ## Installs outside the pluging ( may not be as up to date as I like :joy: )
 
@@ -25,3 +26,5 @@ Delete `rm -rf ~/.config/nvim`
 
 some files are exported modules with `init` functions and some are not.
 Not sure if the inconsistancy prevents extra lines of code VS a mix of patterns.
+
+on working branches files that are pre-fixed with `_` are old files kept for ease of reference until the changes are ready to go.
