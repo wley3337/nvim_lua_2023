@@ -18,15 +18,15 @@ return {
 	},
 	opts = {
 		-- https://github.com/epwalsh/obsidian.nvim?tab=readme-ov-file#configuration-options
-		-- workspaces = {
-		-- 	{
-		-- 		name = "personal",
-		-- 		path = "~/vaults/personal",
-		-- 	},
-		-- 	{
-		-- 		name = "work",
-		-- 		path = "~/vaults/work",
-		-- 	},
-		-- },
+		workspaces = {
+			{
+				name = "personal",
+				path = "~/Documents/wills_notes/",
+			},
+			-- {
+			-- 	name = "work",
+			-- 	path = "~/vaults/work",
+			-- },
+		},
 	},
 }

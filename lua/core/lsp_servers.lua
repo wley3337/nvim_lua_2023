@@ -48,6 +48,21 @@ M.server_configs = {
 			},
 		}
 	end,
+	-- go lang
+	gopls = function()
+		return {
+			-- example if you want to customize
+			-- settings = {
+			-- 	gopls = {
+			-- 		analyses = {
+			-- 			unusedparams = true,
+			-- 		},
+			-- 		staticcheck = true,
+			-- 		gofumpt = true,
+			-- 	},
+			-- },
+		}
+	end,
 	-- quick lint
 	quick_lint_js = function()
 		return {}
