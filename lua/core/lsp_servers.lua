@@ -131,9 +131,23 @@ M.server_configs = {
 		}
 	end,
 	pyright = function()
-		return {}
+		return {
+
+			settings = {
+				pyright = { autoImportCompletion = true, disableOrganizeImports = true },
+				python = {
+					analysis = {
+						ignore = { "*" },
+						-- autoSearchPaths = true,
+						-- diagnosticMode = "openFilesOnly",
+						-- useLibraryCodeForTypes = true,
+						-- typeCheckingMode = "off",
+					},
+				},
+			},
+		}
 	end,
-	ruff = function()
+	ruff_lsp = function()
 		return {}
 	end,
 }

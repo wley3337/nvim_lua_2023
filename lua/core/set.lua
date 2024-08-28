@@ -28,9 +28,9 @@ local function init()
 
 	-- vim.opt.wrap = false
 	-- vim.opt.termguicolors = true
-	vim.opt.foldcolumn = "1"
-	vim.opt.foldlevel = 20
-	vim.opt.foldlevelstart = 2
+	vim.opt.foldcolumn = "0"
+	vim.opt.foldlevel = 99
+	vim.opt.foldlevelstart = 99
 	vim.opt.foldenable = true
 	-- fold settings
 	-- vim.o.foldmethod = "indent"
