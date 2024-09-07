@@ -147,8 +147,12 @@ M.server_configs = {
 			},
 		}
 	end,
-	ruff_lsp = function()
-		return {}
+	ruff = function()
+		return {
+			init_options = {
+				settings = {},
+			},
+		}
 	end,
 }
 return M

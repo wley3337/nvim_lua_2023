@@ -89,7 +89,13 @@ return {
 
 			mason_lspconfig.setup_handlers({
 				function(server_name)
-					lspconfig[server_name].setup(servers[server_name])
+					local lsp_server_name = server_name
+					-- nvim_lsp changed tsserver into ts_ls in anticipation
+					-- of a full lsp with the name tsserver due out
+					if server_name == "tsserver" then
+						lsp_server_name = "ts_ls"
+					end
+					lspconfig[lsp_server_name].setup(servers[server_name])
 				end,
 			})
 

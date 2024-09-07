@@ -1,4 +1,4 @@
--- values in this table will be used to formate and lint and are ensured install
+-- values in this table will be used to format and lint and are ensured install
 -- in Mason, Conform, Lint
 local M = {}
 M.formatters = {
@@ -21,19 +21,21 @@ M.formatters = {
 M.linters = {
 	javascript = { "eslint_d" },
 	javascriptreact = { "eslint_d" },
+	-- python = { "mypy", "ruff" },
 	python = { "mypy", "ruff" },
 	svelte = { "eslint_d" },
 	typescript = { "eslint_d" },
 	typescriptreact = { "eslint_d" },
 }
+-- If cspell global is re-enabled, then you need to update linters.lua as well
 -- M.global = { "cspell" }
-M.global = {}
+-- M.global = {}
 M.ensure_installed = function()
 	local install_items = {}
 
-	for _, v in pairs(M.global) do
-		install_items[v] = true
-	end
+	-- for _, v in pairs(M.global) do
+	-- 	install_items[v] = true
+	-- end
 	for _, lang_formatters in pairs(M.formatters) do
 		for _, formatter in pairs(lang_formatters) do
 			install_items[formatter] = true
@@ -41,11 +43,12 @@ M.ensure_installed = function()
 	end
 	for _, lang_linters in pairs(M.linters) do
 		for _, linter in pairs(lang_linters) do
+			install_items[linter] = true
 			-- linters are a string list of formatters separated by a ,
-			for _linter in string.gmatch(linter, "[^,]+") do
-				local _linter_remove_white_space = string.gsub(_linter, "%s+", "")
-				install_items[_linter_remove_white_space] = true
-			end
+			-- for _linter in string.gmatch(linter, "[^,]+") do
+			-- 	local _linter_remove_white_space = string.gsub(_linter, "%s+", "")
+			-- 	install_items[_linter_remove_white_space] = true
+			-- end
 		end
 	end
 

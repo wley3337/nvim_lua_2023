@@ -7,8 +7,8 @@ return {
 			return
 		end
 		auto_session.setup({
-			auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-			auto_session_use_git_branch = true, -- true, false, nil
+			suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+			use_git_branch = true, -- true, false, nil
 			log_level = "error",
 			-- Set mapping for searching a session.
 			-- ⚠️ This will only work if Telescope.nvim is installed
