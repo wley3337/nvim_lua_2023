@@ -28,6 +28,22 @@ local function init()
 
 	-- vim.opt.wrap = false
 	-- vim.opt.termguicolors = true
+	vim.opt.foldcolumn = "0"
+	vim.opt.foldlevel = 99
+	vim.opt.foldlevelstart = 99
+	vim.opt.foldenable = true
+	-- fold settings
+	-- vim.o.foldmethod = "indent"
+	-- vim.opt.foldmethod = "expr"
+	-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+	-- vim.opt.foldlevel = 20
+	vim.opt.foldtext =
+		[[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend)) ]]
+	-- vim.opt.foldtext =
+	--     [[substitute(getline(v:foptldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g') . " "    . (v:foldend-v:foldstart + 1) . "..."]]
+	-- vim.opt.fillchars = "fold: "
+	-- vim.opt.foldnestmax = 3
+	-- vim.opt.foldminlines = 1
 end
 
 init()
