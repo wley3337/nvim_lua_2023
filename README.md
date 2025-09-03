@@ -12,6 +12,7 @@ Seperate core functionality and specific additions/modifications. Essentially to
 - [Josean Martinez](https://github.com/josean-dev/dev-environment-files/blob/main/.config/nvim/lua/josean/plugins/lsp/mason.lua)
 - [TypeCraft.dev](https://www.youtube.com/@typecraft_dev)
 - [Andrew Courter](https://www.youtube.com/watch?v=f_f08KnAJOQ)
+- [Henry Misc](https://www.youtube.com/watch?v=KYDG3AHgYEs&t=10s)
 
 ## Installs outside the pluging ( may not be as up to date as I like :joy: )
 

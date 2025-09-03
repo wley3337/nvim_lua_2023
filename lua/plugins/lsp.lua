@@ -95,6 +95,9 @@ return {
 				--  the definition of its *type*, not where it was *defined*.
 				map("grt", require("telescope.builtin").lsp_type_definitions, "[G]oto [T]ype Definition")
 
+				-- open hover for line diagnostic
+				map("<leader>hd", vim.diagnostic.open_float, "[H]over [D]iagnostic")
+
 				-- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
 				---@param client vim.lsp.Client
 				---@param method vim.lsp.protocol.Method
