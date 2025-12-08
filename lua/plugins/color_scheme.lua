@@ -9,7 +9,7 @@ return {
 		-- load the colorscheme here
 		-- require('colorbuddy').colorscheme('night-owl')
 		-- require("colorbuddy").colorscheme("nightly")
-		require("night-owl").setup()
+		-- require("night-owl").setup()
 		vim.cmd.colorscheme("night-owl")
 	end,
 	dependencies = {
