@@ -2,7 +2,7 @@
 
 ## Idea
 
-Seperate core functionality and specific additions/modifications. Essentially to have a personal setup that can be different from a work setup.
+Separate core functionality and specific additions/modifications. Essentially to have a personal setup that can be different from a work setup.
 
 ## Inspiration, guides, and all around learnings
 
@@ -14,7 +14,7 @@ Seperate core functionality and specific additions/modifications. Essentially to
 - [Andrew Courter](https://www.youtube.com/watch?v=f_f08KnAJOQ)
 - [Henry Misc](https://www.youtube.com/watch?v=KYDG3AHgYEs&t=10s)
 
-## Installs outside the pluging ( may not be as up to date as I like :joy: )
+## Installs outside the plug-ins ( may not be as up to date as I like :joy: )
 
 - `brew install ripgrep`
 - [install nerd fonts](https://gist.github.com/davidteren/898f2dcccd42d9f8680ec69a3a5d350e)
@@ -26,7 +26,7 @@ Delete `rm -rf ~/.config/nvim`
 
 ## Patterns
 
-some files are exported modules with `init` functions and some are not.
-Not sure if the inconsistancy prevents extra lines of code VS a mix of patterns.
+Some files are exported modules with `init` functions and some are not.
+Not sure if the inconsistency prevents extra lines of code VS a mix of patterns.
 
-on working branches files that are pre-fixed with `_` are old files kept for ease of reference until the changes are ready to go.
+On working branches files that are prefixed with `_` are old files kept for ease of reference until the changes are ready to go.
